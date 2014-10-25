@@ -1,9 +1,10 @@
 ﻿@using querygram
 @{
-    Layout = "~/Views/Shared/_LayoutMirror.cshtml";
     ViewBag.Title = "Settings";
 }
 
+
+<a class="btn" href="@Url.Action("Logout","Home")">Logout</a>
 
 <a class="btn" href="@Url.Action("Welcome", "Cards")">Welcome</a>
 <a class="btn" href="@Url.Action("Charge", "Cards")">Visa Charge</a>

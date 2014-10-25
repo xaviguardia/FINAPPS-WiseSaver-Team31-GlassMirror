@@ -23,7 +23,7 @@ namespace instacollect.Controllers
 {
     public class MirrorController : Controller
     {
-        public string ApplicationName = "FinApps SmartExpense";
+        public string ApplicationName = "FinApps wisesaver";
         internal Repository<Subscribers> repositorySubscribers;
         internal Repository<SubscriberPreference> repositorySubscriberPreference;
         internal Repository<KPI> repositoryKPI;
@@ -42,22 +42,6 @@ namespace instacollect.Controllers
         }
 
 
-        public ActionResult ErrorOops()
-        {
-            return View();
-        }
-
-        public ActionResult Denied()
-        {
-            return View();
-        }
-
-
-        public ActionResult Logout()
-        {
-            return View();
-        }
-
         public ActionResult Index()
         {
             return View();
@@ -68,11 +52,8 @@ namespace instacollect.Controllers
             return View();
         }
 
-
-
         public async Task<ActionResult> Login(CancellationToken cancellationToken)
         {
-
             Google.Apis.Auth.OAuth2.Web.AuthorizationCodeWebApp.AuthResult result = await new AuthorizationCodeMvcApp(this, new AppFlowMetadata()).
                 AuthorizeAsync(cancellationToken);
             Google.Apis.Oauth2.v2.Data.Userinfoplus userinfo = new Google.Apis.Oauth2.v2.Data.Userinfoplus();
@@ -90,10 +71,8 @@ namespace instacollect.Controllers
                 });
                 userinfo = await oauthSvc.Userinfo.Get().ExecuteAsync();
                 Session["userId"] = userinfo.Id;
-
                 BootstrapUser(mirrSvc, userinfo.Id, result, userinfo.Email);
-
-                return RedirectToAction("Login", "Preferences");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -185,61 +164,6 @@ namespace instacollect.Controllers
 
         }
 
-        public async Task<ActionResult> ReLogin(CancellationToken cancellationToken)
-        {
-            try
-            {
-                Google.Apis.Auth.OAuth2.Web.AuthorizationCodeWebApp.AuthResult result = await new AuthorizationCodeMvcApp(this, new AppFlowMetadata()).
-                    AuthorizeAsync(cancellationToken);
-                Google.Apis.Oauth2.v2.Data.Userinfoplus userinfo = new Google.Apis.Oauth2.v2.Data.Userinfoplus();
-
-
-                if (result.Credential != null)
-                {
-                    var mirrSvc = new MirrorService(new BaseClientService.Initializer
-                    {
-                        HttpClientInitializer = result.Credential,
-                        ApplicationName = ApplicationName
-                    });
-
-                    var oauthSvc = new Oauth2Service(new BaseClientService.Initializer
-                    {
-                        HttpClientInitializer = result.Credential,
-                        ApplicationName = ApplicationName
-                    });
-
-                    try
-                    {
-                        userinfo = await oauthSvc.Userinfo.Get().ExecuteAsync();
-                        Session["userId"] = userinfo.Id;
-                    }
-                    catch (Exception ex)
-                    {
-                        result.Credential.RevokeTokenAsync(cancellationToken);
-                        return RedirectToAction("Login", "Mirror");
-                    }
-
-                    BootstrapUser(mirrSvc, userinfo.Id, result, userinfo.Email);
-
-                    return RedirectToAction("Login", "Preferences");
-                }
-                else
-                {
-                    return new RedirectResult(result.RedirectUri);
-                }
-            }
-            catch (Exception ex)
-            {
-                string message;
-                message = String.Format("{0}--{1}", ex.Message, ex.InnerException != null ? ex.InnerException.Message : "");
-                return RedirectToAction("Error", "Mirror");
-            }
-        }
-
-        public ActionResult Preferences()
-        {
-            return RedirectToAction("Login", "Preferences");
-        }
-
+    
     }
 }
