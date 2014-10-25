@@ -1,0 +1,88 @@
+﻿@using querygram
+@model UserListModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Page header -->
+<div class="page-header">
+    <div class="page-title">
+        <h3>Users<small>Welcome @User.Identity.Name</small></h3>
+    </div>
+
+
+</div>
+<!-- /page header -->
+
+
+<!-- Breadcrumbs line -->
+<div class="breadcrumb-line">
+    <ul class="breadcrumb">
+        <li>@Html.ActionLink("Home", "Index", "Admin")</li>
+        <li class="active">Users</li>
+    </ul>
+
+    <div class="visible-xs breadcrumb-toggle">
+        <a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+    </div>
+
+
+</div>
+<!-- /breadcrumbs line -->
+
+
+
+<!-- Tasks table -->
+<div class="block">
+    <h6 class="heading-hr"><i class="icon-paragraph-justify2"></i>@ViewBag.Title</h6>
+    <a href="@Url.Action("Register")" class="btn btn-primary">Crear</a>
+    <div class="datatable-tasks">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Roles</th>
+                    <th>Roles Posibles</th>
+                    <th class="task-tools text-center">Tools</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var usu in Model.Users)
+                {
+                    <tr>
+                        <td class="casos-idhumano">
+                            @usu.UserName
+                        </td>
+                        <td class="casos-idhumano">
+                            <ul>
+                                @foreach (var rol in usu.Roles)
+                                {
+                                    <li>@rol.RoleName  @Html.ActionLink("Quitar", "RemoveUserFromRole", new { UserId = usu.UserId, RoleId = rol.RoleId })</li>
+                                }
+                            </ul>
+                        </td>
+                        <td class="casos-idhumano">
+                            <ul>
+                                @foreach (var rol in Model.Roles.Where(t => !usu.Roles.Contains(t)))
+                                {
+                                    <li>@rol.RoleName @Html.ActionLink("Añadir", "AddUserToRole", new { UserId = usu.UserId, RoleId = rol.RoleId })</li>
+                                }
+                            </ul>
+                        </td>
+
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+                                <ul class="dropdown-menu icons-right dropdown-menu-right">
+                                 
+
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

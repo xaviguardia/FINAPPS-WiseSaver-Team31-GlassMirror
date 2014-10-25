@@ -1,0 +1,689 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{73C8D322-3715-452C-8467-05288FD0749A}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>instacollect</RootNamespace>
+    <AssemblyName>instacollect</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet">
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core">
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.9.0.26011, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.1.9.0\lib\net40\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth">
+      <HintPath>..\packages\Google.Apis.Auth.1.9.0\lib\net40\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.Mvc4, Version=1.9.0.26013, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.Auth.Mvc.1.9.0\lib\net40\Google.Apis.Auth.Mvc4.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices">
+      <HintPath>..\packages\Google.Apis.Auth.1.9.0\lib\net40\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <Private>True</Private>
+      <HintPath>..\packages\Google.Apis.Core.1.9.0\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Drive.v2">
+      <HintPath>..\packages\Google.Apis.Drive.v2.1.8.1.1190\lib\portable-net4+sl4+wp71+win8\Google.Apis.Drive.v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Mirror.v1">
+      <HintPath>..\packages\Google.Apis.Mirror.v1.1.8.1.420\lib\portable-net4+sl4+wp71+win8\Google.Apis.Mirror.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Oauth2.v2, Version=1.9.0.78, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.Oauth2.v2.1.9.0.780\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Oauth2.v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.9.0.26013, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Google.Apis.1.9.0\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="mustache-sharp">
+      <HintPath>..\packages\mustache-sharp.0.2.8.1\lib\net40\mustache-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpKml">
+      <HintPath>..\DATOS\SharpKml.dll</HintPath>
+    </Reference>
+    <Reference Include="SoundInTheory.DynamicImage">
+      <HintPath>..\packages\DynamicImage.3.1.1\lib\net40\SoundInTheory.DynamicImage.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.22.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.22.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.2\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="Zlib.Portable, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Zlib.Portable.1.10.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\DynamicImage.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccountsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GenericController.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\AuthCallbackController.cs" />
+    <Compile Include="Controllers\CardsController.cs" />
+    <Compile Include="Controllers\PreferencesController.cs" />
+    <Compile Include="Controllers\GenericController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MirrorController.cs" />
+    <Compile Include="Controllers\NotifyController.cs" />
+    <Compile Include="Geo.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\AppFlowMetaData.cs" />
+    <Compile Include="Utils\Helper.cs" />
+    <Compile Include="Utils\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Utils\MirrorUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="card1.html" />
+    <Content Include="Cards\charges.html" />
+    <Content Include="Cards\welcome.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cards\tomorrow.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cards\congrats.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\examples.css" />
+    <Content Include="Content\css\icons.css" />
+    <Content Include="Content\css\icons\icons.dev.svg" />
+    <Content Include="Content\css\icons\icons.svg" />
+    <Content Include="Content\css\londinium-theme.css" />
+    <Content Include="Content\css\styles.css" />
+    <Content Include="Content\images\blue-circle.png" />
+    <Content Include="Content\images\card01.png" />
+    <Content Include="Content\images\card05.png" />
+    <Content Include="Content\images\card09.png" />
+    <Content Include="Content\images\card10.png" />
+    <Content Include="Content\images\card00.jpg" />
+    <Content Include="Content\images\green-circle.png" />
+    <Content Include="Content\images\cardimmersion01.jpg" />
+    <Content Include="Content\images\lavidamaschula-desigual-v3.png" />
+    <Content Include="Content\images\ltblue-circle.png" />
+    <Content Include="Content\images\menuicon\ic_heart_50.png" />
+    <Content Include="Content\images\menuicon\ic_like_50.png" />
+    <Content Include="Content\images\menuicon\ic_unlike_50.png" />
+    <Content Include="Content\images\orange-circle.png" />
+    <Content Include="Content\images\progress-running.gif" />
+    <Content Include="Content\images\purple-circle.png" />
+    <Content Include="Content\images\red-circle.png" />
+    <Content Include="Content\images\scale-0.png" />
+    <Content Include="Content\images\scale-1.png" />
+    <Content Include="Content\images\scale-2.png" />
+    <Content Include="Content\images\scale-3.png" />
+    <Content Include="Content\images\scale-4.png" />
+    <Content Include="Content\images\scale-5.png" />
+    <Content Include="Content\images\scale-6.png" />
+    <Content Include="Content\images\scale-7.png" />
+    <Content Include="Content\images\scale-8.png" />
+    <Content Include="Content\images\scale-9.png" />
+    <Content Include="Content\images\storeCover.jpg" />
+    <Content Include="Content\images\yellow-circle.png" />
+    <Content Include="Content\js\jquery-1.6.2.min.js" />
+    <Content Include="Content\js\jquery.bootstrap-growl.js" />
+    <Content Include="Content\js\timeline-1.2.css" />
+    <Content Include="Content\css\wysihtml5\wysiwyg-color.css" />
+    <Content Include="Content\images\Desigual-Store-Tokyo.jpg" />
+    <Content Include="Content\images\getitonglass_172x60_action_button.png" />
+    <Content Include="Content\images\icon_256.png" />
+    <Content Include="Content\images\lavidamaschula-desigual-v2.png" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\colorpicker\alpha.png" />
+    <Content Include="Content\images\colorpicker\hue.png" />
+    <Content Include="Content\images\colorpicker\saturation.png" />
+    <Content Include="Content\images\flags\english.png" />
+    <Content Include="Content\images\flags\german.png" />
+    <Content Include="Content\images\flags\hungarian.png" />
+    <Content Include="Content\images\flags\spanish.png" />
+    <Content Include="Content\images\flags\ukrainian.png" />
+    <Content Include="Content\images\forms\add_files.png" />
+    <Content Include="Content\images\forms\check.png" />
+    <Content Include="Content\images\forms\checkbox.png" />
+    <Content Include="Content\images\forms\checkbox_blue.png" />
+    <Content Include="Content\images\forms\checkbox_dark.png" />
+    <Content Include="Content\images\forms\checkbox_green.png" />
+    <Content Include="Content\images\forms\checkbox_red.png" />
+    <Content Include="Content\images\forms\check_white.png" />
+    <Content Include="Content\images\forms\choice.png" />
+    <Content Include="Content\images\forms\choice_white.png" />
+    <Content Include="Content\images\forms\clear_results.png" />
+    <Content Include="Content\images\forms\dropdown_arrow_down.png" />
+    <Content Include="Content\images\forms\dropdown_arrow_up.png" />
+    <Content Include="Content\images\forms\radio.png" />
+    <Content Include="Content\images\forms\radio_blue.png" />
+    <Content Include="Content\images\forms\radio_dark.png" />
+    <Content Include="Content\images\forms\radio_green.png" />
+    <Content Include="Content\images\forms\radio_red.png" />
+    <Content Include="Content\images\forms\select_multiple_add.png" />
+    <Content Include="Content\images\forms\spinner_bottom.png" />
+    <Content Include="Content\images\forms\spinner_top.png" />
+    <Content Include="Content\images\forms\switch_handler.png" />
+    <Content Include="Content\images\interface\arrow_left.png" />
+    <Content Include="Content\images\interface\arrow_right.png" />
+    <Content Include="Content\images\interface\breadcrumb_home.png" />
+    <Content Include="Content\images\interface\datepicker_trigger.png" />
+    <Content Include="Content\images\interface\filter.png" />
+    <Content Include="Content\images\interface\lightbox_overlay.png" />
+    <Content Include="Content\images\interface\loader.gif" />
+    <Content Include="Content\images\interface\minus.png" />
+    <Content Include="Content\images\interface\nav_arrow_left.png" />
+    <Content Include="Content\images\interface\nav_arrow_right.png" />
+    <Content Include="Content\images\interface\plupload_done.png" />
+    <Content Include="Content\images\interface\plupload_error.png" />
+    <Content Include="Content\images\interface\plupload_remove.png" />
+    <Content Include="Content\images\interface\plupload_title.png" />
+    <Content Include="Content\images\interface\plus.png" />
+    <Content Include="Content\images\interface\slider_handle.png" />
+    <Content Include="Content\images\interface\tables\filter.png" />
+    <Content Include="Content\images\interface\tables\sort_asc.png" />
+    <Content Include="Content\images\interface\tables\sort_asc_disabled.png" />
+    <Content Include="Content\images\interface\tables\sort_both.png" />
+    <Content Include="Content\images\interface\tables\sort_desc.png" />
+    <Content Include="Content\images\interface\tables\sort_desc_disabled.png" />
+    <Content Include="Content\images\interface\typing.gif" />
+    <Content Include="Content\images\interface\user_arrow_default.png" />
+    <Content Include="Content\images\interface\user_arrow_hover.png" />
+    <Content Include="Content\images\interface\user_menu_arrow.png" />
+    <Content Include="Content\images\interface\vertical_arrows.png" />
+    <Content Include="Content\images\interface\zoom.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\logo_dark.png" />
+    <Content Include="Content\images\menuicon\ic_add_person_50.png" />
+    <Content Include="Content\images\menuicon\ic_angle_50.png" />
+    <Content Include="Content\images\menuicon\ic_archive_50.png" />
+    <Content Include="Content\images\menuicon\ic_arrow_left_50.png" />
+    <Content Include="Content\images\menuicon\ic_arrow_right_50.png" />
+    <Content Include="Content\images\menuicon\ic_attachment_50.png" />
+    <Content Include="Content\images\menuicon\ic_beamed_note_50.png" />
+    <Content Include="Content\images\menuicon\ic_bed_50.png" />
+    <Content Include="Content\images\menuicon\ic_bike_50.png" />
+    <Content Include="Content\images\menuicon\ic_bluetooth_50.png" />
+    <Content Include="Content\images\menuicon\ic_bus_50.png" />
+    <Content Include="Content\images\menuicon\ic_calendar_50.png" />
+    <Content Include="Content\images\menuicon\ic_camera_50.png" />
+    <Content Include="Content\images\menuicon\ic_compass_50.png" />
+    <Content Include="Content\images\menuicon\ic_computer_50.png" />
+    <Content Include="Content\images\menuicon\ic_delete_50.png" />
+    <Content Include="Content\images\menuicon\ic_directions_50.png" />
+    <Content Include="Content\images\menuicon\ic_document_50.png" />
+    <Content Include="Content\images\menuicon\ic_done_150.png" />
+    <Content Include="Content\images\menuicon\ic_done_50.png" />
+    <Content Include="Content\images\menuicon\ic_drive_50.png" />
+    <Content Include="Content\images\menuicon\ic_eighth_note_50.png" />
+    <Content Include="Content\images\menuicon\ic_email_50.png" />
+    <Content Include="Content\images\menuicon\ic_forward_50.png" />
+    <Content Include="Content\images\menuicon\ic_game_50.png" />
+    <Content Include="Content\images\menuicon\ic_gear_50.png" />
+    <Content Include="Content\images\menuicon\ic_help_50.png" />
+    <Content Include="Content\images\menuicon\ic_location_50.png" />
+    <Content Include="Content\images\menuicon\ic_message_50.png" />
+    <Content Include="Content\images\menuicon\ic_microphone_off_50.png" />
+    <Content Include="Content\images\menuicon\ic_microphone_on_50.png" />
+    <Content Include="Content\images\menuicon\ic_mobile_phone_50.png" />
+    <Content Include="Content\images\menuicon\ic_music_move_to_end_50.png" />
+    <Content Include="Content\images\menuicon\ic_music_move_to_front_50.png" />
+    <Content Include="Content\images\menuicon\ic_music_next_50.png" />
+    <Content Include="Content\images\menuicon\ic_music_pause_50.png" />
+    <Content Include="Content\images\menuicon\ic_music_play_50.png" />
+    <Content Include="Content\images\menuicon\ic_music_previous_50.png" />
+    <Content Include="Content\images\menuicon\ic_note_50.png" />
+    <Content Include="Content\images\menuicon\ic_no_50.png" />
+    <Content Include="Content\images\menuicon\ic_pen_50.png" />
+    <Content Include="Content\images\menuicon\ic_people_50.png" />
+    <Content Include="Content\images\menuicon\ic_person_50.png" />
+    <Content Include="Content\images\menuicon\ic_phone_50.png" />
+    <Content Include="Content\images\menuicon\ic_phone_hang_50.png" />
+    <Content Include="Content\images\menuicon\ic_phone_in_50.png" />
+    <Content Include="Content\images\menuicon\ic_phone_out_50.png" />
+    <Content Include="Content\images\menuicon\ic_photo_50.png" />
+    <Content Include="Content\images\menuicon\ic_placeholder_attachment_50.png" />
+    <Content Include="Content\images\menuicon\ic_placeholder_photo_150.png" />
+    <Content Include="Content\images\menuicon\ic_placeholder_video_150.png" />
+    <Content Include="Content\images\menuicon\ic_plus_50.png" />
+    <Content Include="Content\images\menuicon\ic_question_150.png" />
+    <Content Include="Content\images\menuicon\ic_read_aloud_50.png" />
+    <Content Include="Content\images\menuicon\ic_reply_50.png" />
+    <Content Include="Content\images\menuicon\ic_reply_all_50.png" />
+    <Content Include="Content\images\menuicon\ic_run_50.png" />
+    <Content Include="Content\images\menuicon\ic_search_50.png" />
+    <Content Include="Content\images\menuicon\ic_select_link_50.png" />
+    <Content Include="Content\images\menuicon\ic_share_50.png" />
+    <Content Include="Content\images\menuicon\ic_star_50.png" />
+    <Content Include="Content\images\menuicon\ic_storefront_50.png" />
+    <Content Include="Content\images\menuicon\ic_sync_50.png" />
+    <Content Include="Content\images\menuicon\ic_timer_50.png" />
+    <Content Include="Content\images\menuicon\ic_transit_50.png" />
+    <Content Include="Content\images\menuicon\ic_unstar_50.png" />
+    <Content Include="Content\images\menuicon\ic_video_50.png" />
+    <Content Include="Content\images\menuicon\ic_video_off_50.png" />
+    <Content Include="Content\images\menuicon\ic_volume_full_50.png" />
+    <Content Include="Content\images\menuicon\ic_volume_half_50.png" />
+    <Content Include="Content\images\menuicon\ic_volume_muted_50.png" />
+    <Content Include="Content\images\menuicon\ic_walk_50.png" />
+    <Content Include="Content\images\menuicon\ic_warning_150.png" />
+    <Content Include="Content\images\menuicon\ic_warning_50.png" />
+    <Content Include="Content\images\menuicon\ic_world_50.png" />
+    <Content Include="Content\images\minus.png" />
+    <Content Include="Content\images\plus.png" />
+    <Content Include="Content\images\sign-in-with-google.png" />
+    <Content Include="Content\images\trash.png" />
+    <Content Include="Content\js\application.js" />
+    <Content Include="Content\js\application_blank.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\charts\full\animated_1.js" />
+    <Content Include="Content\js\charts\full\animated_2.js" />
+    <Content Include="Content\js\charts\full\animated_3.js" />
+    <Content Include="Content\js\charts\full\auto_empty.js" />
+    <Content Include="Content\js\charts\full\auto_filled.js" />
+    <Content Include="Content\js\charts\full\donut.js" />
+    <Content Include="Content\js\charts\full\horizontal_bars.js" />
+    <Content Include="Content\js\charts\full\multiple_axes.js" />
+    <Content Include="Content\js\charts\full\pie.js" />
+    <Content Include="Content\js\charts\full\pie_full.js" />
+    <Content Include="Content\js\charts\full\simple_graph.js" />
+    <Content Include="Content\js\charts\full\vertical_bars.js" />
+    <Content Include="Content\js\charts\widgets\filled_blue.js" />
+    <Content Include="Content\js\charts\widgets\filled_green.js" />
+    <Content Include="Content\js\charts\widgets\filled_red.js" />
+    <Content Include="Content\js\charts\widgets\updating_1.js" />
+    <Content Include="Content\js\charts\widgets\updating_2.js" />
+    <Content Include="Content\js\charts\widgets\updating_3.js" />
+    <Content Include="Content\js\globalize\globalize.culture.de-DE.js" />
+    <Content Include="Content\js\globalize\globalize.culture.ja-JP.js" />
+    <Content Include="Content\js\globalize\globalize.js" />
+    <Content Include="Content\js\jquery-ui.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\loaders\kml.js" />
+    <Content Include="Content\js\loaders\xml.js" />
+    <Content Include="Content\js\mxn\mxn.core.js" />
+    <Content Include="Content\js\mxn\mxn.google.core.js" />
+    <Content Include="Content\js\mxn\mxn.js" />
+    <Content Include="Content\js\param.js" />
+    <Content Include="Content\js\plugins\charts\jqplot.categoryAxisRenderer.min.js" />
+    <Content Include="Content\js\plugins\charts\jqplot.dateAxisRenderer.min.js" />
+    <Content Include="Content\js\plugins\charts\jqplot.highlighter.min.js" />
+    <Content Include="Content\js\plugins\charts\jqplot.pieRenderer.min.js" />
+    <Content Include="Content\js\plugins\charts\jquery.jqplot.min.js" />
+    <Content Include="Content\js\plugins\charts\sparkline.min.js" />
+    <Content Include="Content\js\plugins\forms\autosize.js" />
+    <Content Include="Content\js\plugins\forms\inputlimit.min.js" />
+    <Content Include="Content\js\plugins\forms\inputmask.js" />
+    <Content Include="Content\js\plugins\forms\listbox.js" />
+    <Content Include="Content\js\plugins\forms\multiselect.js" />
+    <Content Include="Content\js\plugins\forms\select2.min.js" />
+    <Content Include="Content\js\plugins\forms\switch.min.js" />
+    <Content Include="Content\js\plugins\forms\tags.min.js" />
+    <Content Include="Content\js\plugins\forms\uniform.min.js" />
+    <Content Include="Content\js\plugins\forms\uploader\plupload.full.min.js" />
+    <Content Include="Content\js\plugins\forms\uploader\plupload.queue.min.js" />
+    <Content Include="Content\js\plugins\forms\validate.min.js" />
+    <Content Include="Content\js\plugins\forms\wysihtml5\toolbar.js" />
+    <Content Include="Content\js\plugins\forms\wysihtml5\wysihtml5.min.js" />
+    <Content Include="Content\js\plugins\interface\collapsible.min.js" />
+    <Content Include="Content\js\plugins\interface\colorpicker.js" />
+    <Content Include="Content\js\plugins\interface\datatables.min.js" />
+    <Content Include="Content\js\plugins\interface\daterangepicker.js" />
+    <Content Include="Content\js\plugins\interface\fancybox.min.js" />
+    <Content Include="Content\js\plugins\interface\fullcalendar.js" />
+    <Content Include="Content\js\plugins\interface\fullcalendar.min.js" />
+    <Content Include="Content\js\plugins\interface\hover_dropdown.min.js" />
+    <Content Include="Content\js\plugins\interface\jgrowl.min.js" />
+    <Content Include="Content\js\plugins\interface\moment.js" />
+    <Content Include="Content\js\plugins\interface\mousewheel.js" />
+    <Content Include="Content\js\plugins\interface\prettify.js" />
+    <Content Include="Content\js\plugins\interface\tabletools.min.js" />
+    <Content Include="Content\js\plugins\interface\timepicker.min.js" />
+    <Content Include="Content\js\timeline-1.2.js" />
+    <Content Include="Content\js\timemap.js" />
+    <Content Include="Content\media\collection.jpg" />
+    <Content Include="Content\media\collecction.mp4" />
+    <Content Include="Content\media\swf\copy_csv_xls.swf" />
+    <Content Include="Content\media\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Content\media\video.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="index.html" />
+    <Content Include="Content\js\plugins\interface\jquery.jgrowl.map" />
+    <Content Include="Content\js\jquery.min.map" />
+    <Content Include="Content\store.json" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\_ChangePasswordPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\_SetPasswordPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\ExternalLoginFailure.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Manage.cshtml" />
+    <Content Include="Areas\Admin\Views\Accounts\Register.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\About.cshtml" />
+    <Content Include="Content\media\video.3g" />
+    <None Include="Properties\PublishProfiles\insta.pubxml" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\clock.js" />
+    <Content Include="Scripts\funciones.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\markerclusterer_compiled.js" />
+    <Content Include="Scripts\sfyGrid.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Accounts\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Accounts\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Accounts\Index.cshtml" />
+    <Content Include="Views\Accounts\Login.cshtml" />
+    <Content Include="Views\Accounts\Manage.cshtml" />
+    <Content Include="Views\Accounts\Register.cshtml" />
+    <Content Include="Views\Accounts\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Accounts\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Accounts\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Accounts\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Mirror\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Preferences\Preferences.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\LondiniumEditor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\LondiniumDoubleEditor.cshtml" />
+    <Content Include="Views\Shared\_LayoutMirror.cshtml" />
+    <Content Include="Views\Mirror\Privacy.cshtml" />
+    <Content Include="Views\Mirror\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Mirror\Logout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="assets\glass\" />
+    <Folder Include="Models\" />
+    <Folder Include="temp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DATOS\theDatos.csproj">
+      <Project>{0d953b93-e8f5-4e55-8725-530de24943ca}</Project>
+      <Name>theDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{6357cf78-40f1-4053-a847-0cd91b9bc3ee}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\data.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\icons\icons.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\icons\icons.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\icons\icons.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\flags\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\interface\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\js\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\js\charts\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\js\charts\widgets\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\js\plugins\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\js\plugins\forms\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\js\plugins\interface\.DS_Store" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

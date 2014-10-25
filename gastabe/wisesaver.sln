@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wisesaver", "instacollect\wisesaver.csproj", "{73C8D322-3715-452C-8467-05288FD0749A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "theDatos", "DATOS\theDatos.csproj", "{0D953B93-E8F5-4E55-8725-530DE24943CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{6357CF78-40F1-4053-A847-0CD91B9BC3EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73C8D322-3715-452C-8467-05288FD0749A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C8D322-3715-452C-8467-05288FD0749A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C8D322-3715-452C-8467-05288FD0749A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C8D322-3715-452C-8467-05288FD0749A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D953B93-E8F5-4E55-8725-530DE24943CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D953B93-E8F5-4E55-8725-530DE24943CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D953B93-E8F5-4E55-8725-530DE24943CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D953B93-E8F5-4E55-8725-530DE24943CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6357CF78-40F1-4053-A847-0CD91B9BC3EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6357CF78-40F1-4053-A847-0CD91B9BC3EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6357CF78-40F1-4053-A847-0CD91B9BC3EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6357CF78-40F1-4053-A847-0CD91B9BC3EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

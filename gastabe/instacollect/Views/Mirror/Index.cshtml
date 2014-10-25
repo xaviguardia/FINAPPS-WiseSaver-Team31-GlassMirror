@@ -1,0 +1,41 @@
+﻿@model Google.Apis.Mirror.v1.Data.ContactsListResponse
+@{
+    Layout = "~/Views/Shared/_LayoutMirror.cshtml";
+    ViewBag.Title = "Index";
+}
+
+
+<!-- Breadcrumbs line -->
+    <div class="breadcrumb-line">
+        <ul class="breadcrumb">
+            <li class="active"><a href="@Url.Action("Index", "Mirror")">Home</a></li>
+        </ul>
+</div>
+    <!-- /breadcrumbs line -->
+
+<div class="login-wrapper">
+
+    <div class="popup-header">
+        <a href="#" class="pull-left"><i class="icon-user-plus"></i></a>
+        <span class="text-semibold">Please Login</span>
+
+    </div>
+    <div class="well">
+        <div class="form-group has-feedback">
+            <a href="@Url.Action("Login", "Mirror")">
+                <img src="@Url.Content("/Content/images/sign-in-with-google.png")" width="100%"/>
+            </a>
+        </div>
+        <!--
+        <div style="margin-left:120px" class="form-group has-feedback">
+            OR
+        </div>
+        <div style="margin-left:40px" class="form-group has-feedback">
+            <a href="https://glass.google.com/glassware/3325328499599313449">
+                <img src="@Url.Content("/Content/images/getitonglass_172x60_action_button.png")"/>
+            </a>
+        </div>
+            -->
+    </div>
+</div>
+

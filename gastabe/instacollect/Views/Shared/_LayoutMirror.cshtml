@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SmartExpense</title>
+
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/css/londinium-theme.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/css/styles.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="~/Content/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/sfyGrid.js"></script>
+
+    <script type="text/javascript" src="~/Content/js/plugins/charts/sparkline.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/js/plugins/forms/uniform.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/forms/select2.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/forms/inputmask.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/forms/autosize.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/forms/inputlimit.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/forms/listbox.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/forms/multiselect.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/forms/validate.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/forms/tags.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/forms/switch.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/js/plugins/forms/uploader/plupload.full.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/forms/uploader/plupload.queue.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/js/plugins/forms/wysihtml5/wysihtml5.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/forms/wysihtml5/toolbar.js"></script>
+
+    <script type="text/javascript" src="~/Content/js/plugins/interface/daterangepicker.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/interface/fancybox.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/interface/moment.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/interface/jgrowl.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/interface/datatables.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/interface/colorpicker.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/interface/fullcalendar.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/interface/timepicker.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/plugins/interface/collapsible.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.bootstrap-growl.js"></script>
+    <script type="text/javascript" src="~/Content/js/application.js"></script>
+</head>
+
+<body class="sidebar-wide">
+    <!-- Navbar -->
+    <div class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+            Smart Expense   
+            </a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
+
+            @if (Session["userId"] != null)
+            {
+                if (!String.IsNullOrEmpty(Session["userId"].ToString()))
+                {
+                <li>
+                    <a href="@Url.Action("Signout", "Preferences")">Logout</a>
+                </li>
+                }
+            }
+        </ul>
+    </div>
+    <!-- /navbar -->
+
+
+    <!-- Page container -->
+    <div class="page-container sidebar-hidden">
+
+
+        <!-- Page content -->
+
+        <div class="page-content">
+
+            @RenderBody()
+
+
+
+        </div>
+        <!-- /page content -->
+
+
+    </div>
+    <!-- /page container -->
+    <!-- Footer -->
+    <div class="footer col-xs-offset-1 clearfix">
+        <div class="pull-left">Google and the Google Logo are registered trademarks of Google Inc.</div>
+        <br />
+        <div class="pull-left">Glass and Google+ are trademarks of Google Inc.</div>
+        <br />
+        <br />
+        <div class="pull-left">&copy; 2014. 4 brains with glass </div>
+        <br />
+
+    </div>
+    <!-- /footer -->
+</body>
+</html>

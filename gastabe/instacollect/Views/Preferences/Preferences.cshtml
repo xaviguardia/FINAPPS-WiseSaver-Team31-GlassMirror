@@ -1,0 +1,29 @@
+﻿@using querygram
+@{
+    Layout = "~/Views/Shared/_LayoutMirror.cshtml";
+    ViewBag.Title = "Settings";
+}
+@model SubscriberPreference
+@{
+
+
+
+}
+
+<a class="btn" href="@Url.Action("Welcome", "Cards")">Welcome</a>
+<a class="btn" href="@Url.Action("Charge", "Cards")">Visa Charge</a>
+<a class="btn" href="@Url.Action("Congrats", "Cards")">Congrats</a>
+<a class="btn" href="@Url.Action("Tomorrow", "Cards")">Bad Day</a>
+
+<!-- Right labels form-horizontal-->
+@using (Html.BeginForm("Preferences", "Preferences", new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+
+}
+<!-- /right labels -->
+<script type="text/javascript">
+    $(function () {
+
+    });
+
+</script>

@@ -1,0 +1,49 @@
+﻿@using querygram
+@model RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+
+
+<div class="login-wrapper">
+    <div class="popup-header">
+        <a href="#" class="pull-left"><i class="icon-user-plus"></i></a>
+        <span class="text-semibold">Create New Account</span>
+
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <div class="well">
+            <div class="form-group has-feedback">
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+                <i class="icon-users form-control-feedback"></i>
+            </div>
+
+            <div class="form-group has-feedback">
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+                <i class="icon-lock form-control-feedback"></i>
+            </div>
+
+            <div class="form-group has-feedback">
+                @Html.LabelFor(m => m.ConfirmPassword)
+                @Html.PasswordFor(m => m.ConfirmPassword)
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                <i class="icon-lock form-control-feedback"></i>
+            </div>
+            <div class="row form-actions">
+                <div class="col-xs-6">
+                    <button type="submit" class="btn btn-warning pull-right"><i class="icon-menu2"></i>Sign up</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

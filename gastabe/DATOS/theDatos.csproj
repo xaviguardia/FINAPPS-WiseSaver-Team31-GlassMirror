@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D953B93-E8F5-4E55-8725-530DE24943CA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>theDATOS</RootNamespace>
+    <AssemblyName>theDATOS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>..\packages\Google.Apis.1.9.0\lib\net40\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <Private>True</Private>
+      <HintPath>..\packages\Google.Apis.Core.1.9.0\lib\portable-net40+sl50+win+wpa81+wp80\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices">
+      <HintPath>..\packages\Google.Apis.1.9.0\lib\net40\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Zlib.Portable">
+      <HintPath>..\packages\Zlib.Portable.1.10.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201404110833112_dbinit5.cs" />
+    <Compile Include="Migrations\201404110833112_dbinit5.Designer.cs">
+      <DependentUpon>201404110833112_dbinit5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404150748059_dbinit6.cs" />
+    <Compile Include="Migrations\201404150748059_dbinit6.Designer.cs">
+      <DependentUpon>201404150748059_dbinit6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404241525166_dbinit7.cs" />
+    <Compile Include="Migrations\201404241525166_dbinit7.Designer.cs">
+      <DependentUpon>201404241525166_dbinit7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404281600583_dbinit8.cs" />
+    <Compile Include="Migrations\201404281600583_dbinit8.Designer.cs">
+      <DependentUpon>201404281600583_dbinit8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406020959385_dbinit9.cs" />
+    <Compile Include="Migrations\201406020959385_dbinit9.Designer.cs">
+      <DependentUpon>201406020959385_dbinit9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201406041055187_dbinit10.cs" />
+    <Compile Include="Migrations\201406041055187_dbinit10.Designer.cs">
+      <DependentUpon>201406041055187_dbinit10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407301341033_dbinit11.cs" />
+    <Compile Include="Migrations\201407301341033_dbinit11.Designer.cs">
+      <DependentUpon>201407301341033_dbinit11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408060828591_dbinit12.cs" />
+    <Compile Include="Migrations\201408060828591_dbinit12.Designer.cs">
+      <DependentUpon>201408060828591_dbinit12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408211433360_consultasgeo.cs" />
+    <Compile Include="Migrations\201408211433360_consultasgeo.Designer.cs">
+      <DependentUpon>201408211433360_consultasgeo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408260848592_dbupdate1.cs" />
+    <Compile Include="Migrations\201408260848592_dbupdate1.Designer.cs">
+      <DependentUpon>201408260848592_dbupdate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409230943018_nearplaces.cs" />
+    <Compile Include="Migrations\201409230943018_nearplaces.Designer.cs">
+      <DependentUpon>201409230943018_nearplaces.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409250841400_localImage.cs" />
+    <Compile Include="Migrations\201409250841400_localImage.Designer.cs">
+      <DependentUpon>201409250841400_localImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410031056455_flagship.cs" />
+    <Compile Include="Migrations\201410031056455_flagship.Designer.cs">
+      <DependentUpon>201410031056455_flagship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410250458567_canvis.cs" />
+    <Compile Include="Migrations\201410250458567_canvis.Designer.cs">
+      <DependentUpon>201410250458567_canvis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Common\BaseEntity.cs" />
+    <Compile Include="Common\MirrorDB.cs" />
+    <Compile Include="Common\Repository.cs" />
+    <Compile Include="Common\SqlDataStore.cs" />
+    <Compile Include="Models\dto.cs" />
+    <Compile Include="Migrations\201403161048068_InitialCreate.cs" />
+    <Compile Include="Migrations\201403161048068_InitialCreate.Designer.cs">
+      <DependentUpon>201403161048068_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403161205273_puntos.cs" />
+    <Compile Include="Migrations\201403161205273_puntos.Designer.cs">
+      <DependentUpon>201403161205273_puntos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404090835415_dbinit1.cs" />
+    <Compile Include="Migrations\201404090835415_dbinit1.Designer.cs">
+      <DependentUpon>201404090835415_dbinit1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404091135273_dbinit2.cs" />
+    <Compile Include="Migrations\201404091135273_dbinit2.Designer.cs">
+      <DependentUpon>201404091135273_dbinit2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404091324013_dbinit3.cs" />
+    <Compile Include="Migrations\201404091324013_dbinit3.Designer.cs">
+      <DependentUpon>201404091324013_dbinit3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404091528214_dbinit4.cs" />
+    <Compile Include="Migrations\201404091528214_dbinit4.Designer.cs">
+      <DependentUpon>201404091528214_dbinit4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\MirrorSubscribers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201403161048068_InitialCreate.resx">
+      <DependentUpon>201403161048068_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403161205273_puntos.resx">
+      <DependentUpon>201403161205273_puntos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404090835415_dbinit1.resx">
+      <DependentUpon>201404090835415_dbinit1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404091135273_dbinit2.resx">
+      <DependentUpon>201404091135273_dbinit2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404091324013_dbinit3.resx">
+      <DependentUpon>201404091324013_dbinit3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404091528214_dbinit4.resx">
+      <DependentUpon>201404091528214_dbinit4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404110833112_dbinit5.resx">
+      <DependentUpon>201404110833112_dbinit5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404150748059_dbinit6.resx">
+      <DependentUpon>201404150748059_dbinit6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404241525166_dbinit7.resx">
+      <DependentUpon>201404241525166_dbinit7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404281600583_dbinit8.resx">
+      <DependentUpon>201404281600583_dbinit8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406020959385_dbinit9.resx">
+      <DependentUpon>201406020959385_dbinit9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201406041055187_dbinit10.resx">
+      <DependentUpon>201406041055187_dbinit10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407301341033_dbinit11.resx">
+      <DependentUpon>201407301341033_dbinit11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408060828591_dbinit12.resx">
+      <DependentUpon>201408060828591_dbinit12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408211433360_consultasgeo.resx">
+      <DependentUpon>201408211433360_consultasgeo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408260848592_dbupdate1.resx">
+      <DependentUpon>201408260848592_dbupdate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409230943018_nearplaces.resx">
+      <DependentUpon>201409230943018_nearplaces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409250841400_localImage.resx">
+      <DependentUpon>201409250841400_localImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410031056455_flagship.resx">
+      <DependentUpon>201410031056455_flagship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410250458567_canvis.resx">
+      <DependentUpon>201410250458567_canvis.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SharpKml.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
