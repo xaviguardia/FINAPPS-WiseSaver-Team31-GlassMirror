@@ -32,17 +32,17 @@ namespace instacollect.Controllers
             MirrorService mirrSvc = await GetServiceForUser();
             var filename = Server.MapPath("~/Cards/welcome.html");
             MirrorUtils.InsertIteFromTemplate(mirrSvc, filename, new { });
-            return View();
+            return View("Index");
         }
 
 
         public async Task<ActionResult> Charge(CancellationToken cancellationToken)
         {
             MirrorService mirrSvc = await GetServiceForUser();
-            var filename = Server.MapPath("~/Cards/Charge.html");
+            var filename = Server.MapPath("~/Cards/Charges.html");
             var objcharge = new { store = "Manga Clothing", amount = "24,95€", cardno = "**** **** **** 4135" };
             MirrorUtils.InsertIteFromTemplate(mirrSvc, filename, objcharge);
-            return View();
+            return View("Index");
         }
 
         public async Task<ActionResult> Tomorrow(CancellationToken cancellationToken)
@@ -50,19 +50,24 @@ namespace instacollect.Controllers
             MirrorService mirrSvc = await GetServiceForUser();
             var filename = Server.MapPath("~/Cards/tomorrow.html");
             MirrorUtils.InsertIteFromTemplate(mirrSvc, filename, new { });
-            return View();
+            return View("Index");
         }
 
         public async Task<ActionResult> Congrats(CancellationToken cancellationToken)
         {
             MirrorService mirrSvc = await GetServiceForUser();
             var filename = Server.MapPath("~/Cards/Congrats.html");
-            MirrorUtils.InsertIteFromTemplate(mirrSvc, filename, new { days="26" });
+            MirrorUtils.InsertIteFromTemplate(mirrSvc, filename, new { days = "26" });
+            return View("Index");
+        }
+
+
+        public async Task<ActionResult> Index(CancellationToken ctk)
+        {
             return View();
         }
 
-    
-     
+
 
 
 

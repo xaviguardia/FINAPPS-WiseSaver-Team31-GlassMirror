@@ -14,12 +14,11 @@ namespace Services
 {
     public class Utils
     {
-        public static string TextSelection = "Tu foto ha sido elegida para la #LaVidaEsChula de Desigual";
         public static string clientId = "499598070210-4gudglmppg3h1gkm48ejr1pvcilrjggg.apps.googleusercontent.comm";
         public static string clientSecret = "kslJht8K-G3rKT6DyJW0Hmg7";
         private static Random rnd = new Random();
         public static string filePath = "C:\\inetpub\\wwwroot\\finapps\\temp\\";
-        public static string urlPath = "http://www.vidaeschula.com/temp/";
+       
 
         public static string UrlEncodeForGoogle(string url)
         {

@@ -103,12 +103,6 @@ namespace instacollect.Controllers
 
         private void BootstrapUser(MirrorService mirrorService, string userId, Google.Apis.Auth.OAuth2.Web.AuthorizationCodeWebApp.AuthResult auth, string userEmail)
         {
-
-         
-            //filename = Server.MapPath("~/Cards/charges.html");
-            //var objcharge = new { store = "Manga Clothing", amount = "24,95€", cardno = "**** **** **** 4135" };
-            //MirrorUtils.InsertIteFromTemplate(mirrorService, filename, objcharge);
-
             var subscriber = repositorySubscribers.Find(userId);
             if (subscriber == null)
             {
